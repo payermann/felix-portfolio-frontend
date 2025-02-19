@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import axios from "axios";
 
-// const API = "https://api.felix-portfolio.de/items";
-const API_LOCAL = "http://localhost:80/api/items";
+const API = "https://api.felix-portfolio.de/items";
+// const API_LOCAL = "http://localhost:80/api/items";
 
 interface Item {
   name: string;
@@ -14,7 +14,7 @@ function App() {
   const [items, setItems] = useState<Item[] | null>(null);
 
   const fetchItems = () => {
-    axios.get<Item[]>(API_LOCAL).then((r) => {
+    axios.get<Item[]>(API).then((r) => {
       setItems(r.data);
     });
   };
