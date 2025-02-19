@@ -2,21 +2,30 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import axios from "axios";
 
+// const API = "https://api.felix-portfolio.de/items";
+const API_LOCAL = "http://localhost:80/api/items";
+
+interface Item {
+  name: string;
+  img: string;
+}
+
 function App() {
-  const [items, setItems] = useState(null);
+  const [items, setItems] = useState<Item[] | null>(null);
 
   const fetchItems = () => {
-    axios.get("https://api.site-test-deploy1.ru/items").then((r) => {
+    axios.get<Item[]>(API_LOCAL).then((r) => {
       setItems(r.data);
     });
   };
 
   useEffect(() => {
     fetchItems();
-    setInterval(() => {
+    const interval = setInterval(() => {
       fetchItems();
     }, 2000);
-  }, []);
+    return () => clearInterval(interval); // Очистка интервала при размонтировании компонента
+  }, []); // Добавлен закрывающий массив зависимостей
 
   return (
     <>
