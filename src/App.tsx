@@ -3,7 +3,7 @@ import "./App.css";
 import axios from "axios";
 
 const API = "https://api.felix-portfolio.de/items";
-// const API_LOCAL = "http://localhost:80/api/items";
+// const API = "http://localhost:80/api/items";
 
 interface Item {
   name: string;
