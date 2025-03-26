@@ -1,53 +1,21 @@
-import { useEffect, useState } from "react";
-import "./App.css";
-import axios from "axios";
-
-const API = "https://api.felix-portfolio.de/items";
-// const API = "http://localhost:80/api/items";
-
-interface Item {
-  name: string;
-  img: string;
-}
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import "./styles/App.css";
+import Layout from "./sections/Layout";
+import About from "./pages/About";
+import Exemple from "./pages/Exemple";
+import Home from "./pages/Home";
 
 function App() {
-  const [items, setItems] = useState<Item[] | null>(null);
-
-  const fetchItems = () => {
-    axios.get<Item[]>(API).then((r) => {
-      setItems(r.data);
-    });
-  };
-
-  useEffect(() => {
-    fetchItems();
-    const interval = setInterval(() => {
-      fetchItems();
-    }, 2000);
-    return () => clearInterval(interval); // Очистка интервала при размонтировании компонента
-  }, []); // Добавлен закрывающий массив зависимостей
-
   return (
-    <>
-      {items &&
-        items.map((item) => {
-          return (
-            <span
-              style={{ padding: "0px 4px" }}
-              key={item.name}
-              className="roll-out"
-            >
-              <img
-                src={item.img}
-                alt="logo"
-                width="16"
-                style={{ padding: "0px 5px" }}
-              ></img>
-              <span>{item.name}</span>
-            </span>
-          );
-        })}
-    </>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="about" element={<About />} />
+        </Route>
+        <Route path="/exemple" element={<Exemple />} />
+      </Routes>
+    </Router>
   );
 }
 
