@@ -1,21 +1,25 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import "./styles/App.css";
 import Layout from "./sections/Layout";
 import About from "./pages/About";
 import Exemple from "./pages/Exemple";
 import Home from "./pages/Home";
+import ThemeToggle from "./components/ThemeToggle";
+import "./styles/App.css";
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route path="about" element={<About />} />
-        </Route>
-        <Route path="/exemple" element={<Exemple />} />
-      </Routes>
-    </Router>
+    <div className="App">
+      <ThemeToggle />
+      <Router>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route path="about" element={<About />} />
+          </Route>
+          <Route path="/exemple" element={<Exemple />} />
+        </Routes>
+      </Router>
+    </div>
   );
 }
 
