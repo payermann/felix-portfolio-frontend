@@ -1,51 +1,28 @@
-import { useEffect, useState } from "react";
-import axios from "axios";
+import Menu from "../components/Menu";
 
-const API = "https://api.felix-portfolio.de/items";
-// const API = "http://localhost:80/api/items";
-
-interface Item {
-  name: string;
-  img: string;
-}
-
-function Home() {
-  const [items, setItems] = useState<Item[] | null>(null);
-
-  const fetchItems = () => {
-    axios.get<Item[]>(API).then((r) => {
-      setItems(r.data);
-    });
-  };
-
-  useEffect(() => {
-    fetchItems();
-    const interval = setInterval(() => {
-      fetchItems();
-    }, 2000);
-    return () => clearInterval(interval);
-  }, []);
+export default function Home() {
   return (
     <>
-      {items &&
-        items.map((item) => {
-          return (
-            <span
-              style={{ padding: "0px 4px" }}
-              key={item.name}
-              className="roll-out"
-            >
-              <img
-                src={item.img}
-                alt="logo"
-                width="16"
-                style={{ padding: "0px 5px" }}
-              ></img>
-              <span>{item.name}</span>
-            </span>
-          );
-        })}
+      <Menu />
+      <div className="hero min-h-50vh lg:min-h-[60vh]">
+        <div className="hero-content flex-col lg:flex-row-reverse text-center">
+          <img
+            src="https://avatars.githubusercontent.com/u/22892326?v=4"
+            className="max-w-sm rounded-full shadow-2xl"
+            alt="Felix photo"
+          />
+          <div>
+            <h1 className="text-5xl font-bold px-10">Hi! My name is Felix</h1>
+            <p className="text-xl py-10 px-10">
+              I'm a web developer. I love to create web applications. I have a
+              passion for learning new technologies and improving my skills. I
+              am currently looking for a job as a web developer. If you are
+              interested in my work, please feel free to contact me.
+            </p>
+            <button className="btn btn-primary center">Contact me</button>
+          </div>
+        </div>
+      </div>
     </>
   );
 }
-export default Home;
