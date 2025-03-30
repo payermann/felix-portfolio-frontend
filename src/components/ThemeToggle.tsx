@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 export default function ThemeToggle() {
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState("silk");
 
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme");
@@ -9,17 +9,17 @@ export default function ThemeToggle() {
       setTheme(savedTheme);
       document.documentElement.setAttribute("data-theme", savedTheme);
     } else {
-      const systemPrefersDark = window.matchMedia(
-        "(prefers-color-scheme: dark)"
+      const systemPrefersabyss = window.matchMedia(
+        "(prefers-color-scheme: abyss)"
       ).matches;
-      const defaultTheme = systemPrefersDark ? "dark" : "light";
+      const defaultTheme = systemPrefersabyss ? "abyss" : "silk";
       setTheme(defaultTheme);
       document.documentElement.setAttribute("data-theme", defaultTheme);
     }
   }, []);
 
   const toggleTheme = () => {
-    const newTheme = theme === "light" ? "dark" : "light";
+    const newTheme = theme === "silk" ? "abyss" : "silk";
     setTheme(newTheme);
     document.documentElement.setAttribute("data-theme", newTheme);
     localStorage.setItem("theme", newTheme);
@@ -32,7 +32,7 @@ export default function ThemeToggle() {
         <input
           type="checkbox"
           className="theme-controller"
-          checked={theme === "dark"}
+          checked={theme === "abyss"}
           onChange={toggleTheme}
         />
 

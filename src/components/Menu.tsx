@@ -36,6 +36,11 @@ export default function Menu() {
                   E-commerce
                 </Link>
               </li>
+              <li>
+                <a href="#contact" className="px-4 text-xl btn btn-ghost">
+                  Contact me
+                </a>
+              </li>
             </ul>
             <ThemeToggle />
           </div>
@@ -48,14 +53,14 @@ export default function Menu() {
         </Link>
       </div>
       <div className="navbar-end hidden lg:flex">
-        <ul className="menu menu-horizontal">
+        <ul className="menu menu-horizontal gap-2">
           <li>
-            <Link to="/e-commerce" className="px-8 text-xl btn btn-ghost">
+            <Link to="/e-commerce" className="px-4 text-xl btn btn-ghost">
               E-commerce
             </Link>
           </li>
           <li>
-            <a href="#contact" className="px-8 text-xl btn btn-ghost">
+            <a href="#contact" className="px-4 text-xl btn btn-ghost">
               Contact me
             </a>
           </li>

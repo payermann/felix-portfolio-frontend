@@ -1,4 +1,14 @@
 @import "tailwindcss" source("../");
 @plugin "daisyui" {
-  themes: light --default, dark --prefersdark;
+  themes: all;
+}
+@font-face {
+  font-family: "DejaVu";
+  src: url("../assets/fonts/DejaVuSansMNerdFont-Regular.ttf") format("truetype");
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "DejaVu", sans-serif;
 }
