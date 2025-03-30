@@ -1,8 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import About from "./pages/About";
 import Ecommerce from "./pages/Ecommerce";
 import Home from "./pages/Home";
-import ThemeToggle from "./components/ThemeToggle";
 import "./styles/App.css";
 
 function App() {
