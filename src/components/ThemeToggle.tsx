@@ -9,10 +9,10 @@ export default function ThemeToggle() {
       setTheme(savedTheme);
       document.documentElement.setAttribute("data-theme", savedTheme);
     } else {
-      const systemPrefersabyss = window.matchMedia(
-        "(prefers-color-scheme: abyss)"
+      const systemPrefersDark = window.matchMedia(
+        "(prefers-color-scheme: dark)"
       ).matches;
-      const defaultTheme = systemPrefersabyss ? "abyss" : "silk";
+      const defaultTheme = systemPrefersDark ? "abyss" : "silk";
       setTheme(defaultTheme);
       document.documentElement.setAttribute("data-theme", defaultTheme);
     }
