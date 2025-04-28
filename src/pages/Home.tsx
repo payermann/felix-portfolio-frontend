@@ -59,18 +59,34 @@ export default function Home() {
               If you would like to contact me, please feel free to contact me by
               e-mail. Also here you will find links to my social profiles. I am
               always open for new opportunities and cooperation.
+              <br />
+              <br />
+              My e-mail <br />
+              <a
+                className="text-secondary underline"
+                href="mailto:felix.job2025@outlook.de"
+              >
+                felix.job2025@outlook.de
+              </a>
             </p>
+
             <div>
-              <input
-                className="input input-lg validator self-center"
-                type="email"
-                required
-                placeholder="your@email.com"
-              />
-              <div className="validator-hint">Enter valid email address</div>
-              <button className="btn btn-xl btn-primary center mt-4">
-                Send
-              </button>
+              <form action="https://formspree.io/f/xwpopgld" method="POST">
+                <input
+                  className="input input-lg validator self-center"
+                  type="email"
+                  name="email"
+                  required
+                  placeholder="your@email.com"
+                />
+                <div className="validator-hint">Enter valid email address</div>
+                <button
+                  type="submit"
+                  className="btn btn-xl btn-primary center mt-4"
+                >
+                  Send
+                </button>
+              </form>
             </div>
           </div>
         </div>
