@@ -12,6 +12,23 @@ import { loadSlim } from "@tsparticles/slim"; // if you are going to use `loadSl
 
 export function ParticlesComponent() {
   const [init, setInit] = useState(false);
+  const [isDark, setIsDark] = useState(false);
+
+  useEffect(() => {
+    const updateTheme = () => {
+      const theme = document.documentElement.getAttribute("data-theme");
+      setIsDark(theme === "abyss" || theme === "dark");
+    };
+
+    updateTheme();
+
+    const observer = new MutationObserver(updateTheme);
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["data-theme"],
+    });
+    return () => observer.disconnect();
+  }, []);
 
   // this should be run only once per application lifetime
   useEffect(() => {
@@ -46,30 +63,37 @@ export function ParticlesComponent() {
           },
           onHover: {
             enable: true,
-            mode: ["grab", "attract"],
+            mode: ["grab", "attract", "connect"],
           },
         },
         modes: {
           grab: {
-            distance: 40,
+            distance: 140,
             links: {
               opacity: 0.8,
-              color: "#bdff00",
+              color: isDark ? "#bdff00" : "#191926",
             },
           },
           attract: {
-            distance: 50,
+            distance: 40,
             duration: 0.4,
-            factor: 3,
+            factor: 1,
+          },
+          connect: {
+            distance: 200,
+            links: {
+              opacity: 0.5,
+              color: isDark ? "#bdff00" : "#191926",
+            },
           },
         },
       },
       particles: {
         color: {
-          value: "#bdff00",
+          value: isDark ? "#bdff00" : "#191926",
         },
         links: {
-          color: "#bdff00",
+          color: isDark ? "#bdff00" : "#191926",
           distance: 100,
           enable: true,
           opacity: 0.3,
@@ -108,13 +132,13 @@ export function ParticlesComponent() {
       },
       detectRetina: true,
     }),
-    []
+    [isDark]
   );
   if (init) {
     return (
       <Particles
         id="tsparticles"
-        className="absolute inset-0 pointer-events-none"
+        className="absolute inset-0 pointer-events-none z-0"
         particlesLoaded={particlesLoaded}
         options={options}
       />
