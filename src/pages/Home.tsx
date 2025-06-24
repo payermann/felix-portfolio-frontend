@@ -19,6 +19,7 @@ export default function Home() {
     <>
       <Menu />
       <div className="hero min-h-50vh lg:min-h-[60vh] py-8 bg-base-200">
+        <ParticlesComponent />
         <div className="hero-content flex-col lg:flex-row-reverse text-center">
           <img
             src="https://avatars.githubusercontent.com/u/22892326?v=4"
@@ -39,7 +40,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="hero min-h-50vh lg:min-h-[60vh] bg-base-300 py-8">
+      <div className="hero min-h-50vh lg:min-h-[60vh] bg-base-300 py-8 z-10 relative">
         <div className="hero-content flex-col lg:flex-row text-center">
           <h1 className="text-5xl font-bold px-10 py-10">My Skills</h1>
           <div className="grid grid-cols-2 lg:grid-cols-3 gap-4">

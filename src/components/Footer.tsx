@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="footer footer-center sm:footer-horizontal bg-base-100 text-base-content p-10 ">
+    <footer className="footer footer-center sm:footer-horizontal bg-base-100 text-base-content p-10 z-10 relative">
       <nav>
         <h6 className="footer-title">Social</h6>
         <div className="grid grid-flow-col gap-4">

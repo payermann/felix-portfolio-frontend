@@ -54,7 +54,7 @@ export function ParticlesComponent() {
             distance: 40,
             links: {
               opacity: 0.8,
-              color: "#14b8a6",
+              color: "#bdff00",
             },
           },
           attract: {
@@ -66,10 +66,10 @@ export function ParticlesComponent() {
       },
       particles: {
         color: {
-          value: "#14b8a6",
+          value: "#bdff00",
         },
         links: {
-          color: "#14b8a6",
+          color: "#bdff00",
           distance: 100,
           enable: true,
           opacity: 0.3,
@@ -114,7 +114,7 @@ export function ParticlesComponent() {
     return (
       <Particles
         id="tsparticles"
-        className="fixed inset-0 z-[-1] pointer-events-none"
+        className="absolute inset-0 pointer-events-none"
         particlesLoaded={particlesLoaded}
         options={options}
       />
