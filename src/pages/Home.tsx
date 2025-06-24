@@ -2,6 +2,7 @@ import Menu from "../components/Menu";
 import SkillCard from "../components/SkillCard";
 import Footer from "../components/Footer";
 import ScrollToTopButton from "../components/ScrollToTopButton";
+import { ParticlesComponent } from "../components/Particles";
 
 export default function Home() {
   const skills = [
