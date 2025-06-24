@@ -23,7 +23,7 @@ export default function Home() {
         <div className="hero-content flex-col lg:flex-row-reverse text-center">
           <img
             src="https://avatars.githubusercontent.com/u/22892326?v=4"
-            className="max-w-sm rounded-full shadow-2xl"
+            className="w-80 h-80 sm:w-98 sm:h-98 rounded-full shadow-2xl"
             alt="Felix photo"
           />
           <div>
