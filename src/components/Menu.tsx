@@ -1,7 +1,10 @@
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import ThemeToggle from "./ThemeToggle";
 
 export default function Menu() {
+  const { t } = useTranslation();
+
   return (
     <div className="navbar bg-base-100 shadow-sm z-10 relative">
       <div className="navbar-start">
@@ -28,17 +31,17 @@ export default function Menu() {
             className="menu menu-xl dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow items-center px-2"
           >
             <ul>
-              <li>
+              {/* <li>
                 <Link
                   to="/e-commerce"
                   className="font-bold lg:text-xl px-8 text-xl btn btn-ghost"
                 >
-                  E-commerce
+                  {t("nav.ecommerce")}
                 </Link>
-              </li>
+              </li> */}
               <li>
                 <a href="#contact" className="px-4 text-xl btn btn-ghost">
-                  Contact me
+                  {t("nav.contact")}
                 </a>
               </li>
             </ul>
@@ -49,7 +52,7 @@ export default function Menu() {
           to="/"
           className="font-bold lg:text-2xl px-8 text-2xl text-primary"
         >
-          Felix Portfolio
+          {t("nav.brand")}
         </Link>
       </div>
       <div className="navbar-end hidden lg:flex">
@@ -61,7 +64,7 @@ export default function Menu() {
           </li> */}
           <li>
             <a href="#contact" className="px-4 text-xl btn btn-ghost">
-              Contact me
+              {t("nav.contact")}
             </a>
           </li>
         </ul>

@@ -1,8 +1,12 @@
+import { useTranslation } from "react-i18next";
+
 export default function Footer() {
+  const { t } = useTranslation();
+
   return (
     <footer className="footer footer-center sm:footer-horizontal bg-base-100 text-base-content p-10 z-10 relative">
       <nav>
-        <h6 className="footer-title">Social</h6>
+        <h6 className="footer-title">{t("footer.social")}</h6>
         <div className="grid grid-flow-col gap-4">
           <a
             href="https://github.com/payermann"
