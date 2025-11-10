@@ -1,0 +1,17 @@
+<svg width="584" height="578" xmlns="http://www.w3.org/2000/svg" version="1.2">
+ <title>felixicon</title>
+ <defs>
+  <style>
+   text {
+    font-family: "Noto Sans JP";
+    font-size: 500px;
+    font-weight: bold;
+    fill: #BDFF00;
+   }
+  </style>
+ </defs>
+ <g>
+  <title>Layer 1</title>
+  <text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle">F</text>
+ </g>
+</svg>
