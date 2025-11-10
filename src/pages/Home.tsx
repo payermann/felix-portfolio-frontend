@@ -6,13 +6,19 @@ import { ParticlesComponent } from "../components/Particles";
 
 export default function Home() {
   const skills = [
-    { name: "JavaScript", progress: 25 },
-    { name: "TypeScript", progress: 15 },
-    { name: "React", progress: 20 },
-    { name: "Python", progress: 20 },
-    { name: "Django", progress: 20 },
-    { name: "HTML", progress: 30 },
-    { name: "CSS", progress: 35 },
+    { name: "JavaScript" },
+    { name: "TypeScript" },
+    { name: "React" },
+    { name: "Python" },
+    { name: "Django" },
+    { name: "HTML" },
+    { name: "CSS" },
+    { name: "Tailwind CSS" },
+    { name: "Node.js" },
+    { name: "Express.js" },
+    { name: "Git" },
+    { name: "SQL" },
+    { name: "Docker" },
   ];
 
   return (
@@ -45,7 +51,7 @@ export default function Home() {
           <h1 className="text-5xl font-bold px-10 py-10">My Skills</h1>
           <div className="grid grid-cols-2 lg:grid-cols-3 gap-4">
             {skills.map((skill) => (
-              <SkillCard name={skill.name} progress={skill.progress} />
+              <SkillCard key={skill.name} name={skill.name} />
             ))}
           </div>
         </div>
