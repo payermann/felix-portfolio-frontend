@@ -69,12 +69,14 @@ export default function Home() {
               <br />
               <br />
               {t("home.emailLabel")} <br />
-              <a
-                className="text-secondary underline"
-                href="mailto:felix.job2025@outlook.de"
-              >
-                {t("home.emailAddress")}
-              </a>
+              <div className="flex justify-center">
+                <a
+                  className="text-secondary underline"
+                  href="mailto:felix.job2025@outlook.de"
+                >
+                  {t("home.emailAddress")}
+                </a>
+              </div>
             </p>
 
             <div>
